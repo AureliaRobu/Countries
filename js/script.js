@@ -67,8 +67,7 @@ $(function () {
     $countriesContainer.slick({
       arrows: true,
       dots: true,
-      adaptiveHeight: true,
-      slidesToShow: 3,
+      slidesToShow: 1,
     });
   }
 });

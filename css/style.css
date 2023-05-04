@@ -1,125 +1,71 @@
 * {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-sizing: inherit;
 }
 
-html {
-	font-size: 62.5%;
-	box-sizing: border-box;
-}
-
-body {
-	font-family: system-ui;
-	color: #555;
-	background-color: #f7f7f7;
-	min-height: 100vh;
+.slick-track {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items: flex-start;
+	gap: 2rem;
 }
 
-.container {
-	display: flex;
-	flex-flow: column;
-	align-items: center;
+.slick-list {
+	overflow: hidden;
 }
 
 .countries {
-	/* margin-bottom: 8rem; */
-	display: flex;
-	flex-wrap: wrap;
-	min-width: 0;
-	font-size: 2rem;
-	opacity: 1;
-	transition: opacity 1s;
-}
-
-.country {
-	background-color: #fff;
-	box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
-	font-size: 1.8rem;
-	width: 300px;
-	border-radius: 0.7rem;
+	position: relative;
+	padding: 0 6rem;
 	margin: 3rem 3rem;
-	/* overflow: hidden; */
 }
 
-.neighbour::before {
-	content: 'Neighbour country';
-	width: 100%;
-	position: absolute;
-	top: -4rem;
-	text-align: center;
-	font-size: 1.8rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	color: #888;
-}
-
-.neighbour {
-	transform: scale(0.8) translateY(1rem);
-	margin-left: 0;
-}
-
-.country__img {
+.countries .slick-slide {
 	width: 300px;
-	height: 170px;
-	object-fit: cover;
-	background-color: #eee;
-	border-top-left-radius: 0.7rem;
-	border-top-right-radius: 0.7rem;
 }
 
-.country__data {
-	padding: 2.5rem 3.75rem 3rem 3.75rem;
+.countries .country__img {
+	width: 100%;
 }
 
-.country__name {
-	font-size: 2.7rem;
-	margin-bottom: 0.7rem;
-}
-
-.country__region {
-	font-size: 1.4rem;
-	margin-bottom: 2.5rem;
-	text-transform: uppercase;
-	color: #888;
-}
-
-.country__row:not(:last-child) {
-	margin-bottom: 1rem;
-}
-
-.country__row span {
-	display: inline-block;
-	margin-right: 2rem;
-	font-size: 2.4rem;
-}
-
-.btn-country {
-	border: none;
-	font-size: 2rem;
-	padding: 2rem 5rem;
-	border-radius: 0.7rem;
-	color: white;
-	background-color: orangered;
+.countries .slick-arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	font-size: 0;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
 }
 
-.images {
+.countries .slick-arrow.slick-prev {
+	left: 0;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' /%3E%3C/svg%3E");
+}
+
+.countries .slick-arrow.slick-next {
+	right: 0;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' /%3E%3C/svg%3E");
+}
+
+.countries .slick-dots {
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	margin-bottom: 5rem;
 }
 
-.images img {
-	display: block;
-	width: 800px;
-	margin: 4rem;
+.countries .slick-dots li {
+	list-style: none;
 }
 
-.images img.parallel {
-	width: 400px;
-	margin: 2rem;
-	border: 0.3rem solid white;
-	box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+.countries .slick-dots button {
+	font-size: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #00c46a;
+	border: none;
+	cursor: pointer;
 }
